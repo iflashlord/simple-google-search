@@ -29,6 +29,10 @@ https://simple-google-search-tv-app.herokuapp.com/
 `npm start`
 **Note:** Regarding the release on the Heroku, we should change `npm start` to run serve `build` .
 
+#### Build and Serve Code Documentation: 
+
+`npm run doc`
+
 
 
 #### Description
