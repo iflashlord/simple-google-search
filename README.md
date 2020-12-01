@@ -2,15 +2,7 @@
 
 
 #### Available online on:
-https://simple-google-search-tv-app.herokuapp.com/
-
-
-
-**Note:** As you may know, based on the Github laws, some countries are not allowed to use the private repository feature on that service. That is why I have created a new account with other country data to use a private repository.
-(My real account is: **iflashlord**)
-
-
-
+https://simple-google-search-tv-app.herokuapp.c
 #### Install Packages: 
 
 `npm i `
