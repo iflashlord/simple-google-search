@@ -2,7 +2,8 @@
 
 
 #### Available online on:
-https://simple-google-search-tv-app.herokuapp.c
+https://simple-google-search-tv-app.herokuapp.com/
+
 #### Install Packages: 
 
 `npm i `
