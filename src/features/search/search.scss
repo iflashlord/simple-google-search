@@ -1,0 +1,178 @@
+@import './../../assets/styles/default.scss';
+
+/*
+* style for both web and image search results 
+*/
+
+aside {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 1em);
+    border: 0.6vh solid $border-color;
+    border-radius: 1em;
+    padding: 0 1em;
+    overflow: auto;
+    position: relative;
+    h2 {
+        margin: 0.3em 0 0.3em;
+        color: $text-color;
+        font-size: 2.5vh;
+    }
+    li.no-result {
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        font-size: 2em;
+        color: #616161;
+        padding: 38% 0;
+        background-image: url("../../assets/img/empty.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 3em;
+        animation: no-result-motion 0.3s ease-in-out !important;
+    }
+    &.image-result {
+        background: #fff;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-flow: row wrap;
+            list-style: none;
+            flex: auto;
+            li {
+                animation: search-motion 0.5s ease-in-out;
+                margin: 0 10px 10px;
+                flex-basis: calc(33% - 20px);
+                button {
+                    position: relative;
+                    border: 0;
+                    width: 100%;
+                    height: 100%;
+                    min-height: 100px;
+                    background: #fff;
+                    cursor: pointer;
+                    outline: none;
+                    overflow: hidden;
+                    border: 0.6vh solid $border-color;
+                    border-radius: 1em;
+                    padding: 0.3em;
+                    &:hover,
+                    &:focus,
+                    &:focus-within {
+                        background-color: $bg-basic-color;
+                        border-color: $item-focused-border;
+                    }
+                    img {
+                        pointer-events: none;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        height: 100%;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+    &.web-result {
+        background: #fff;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-flow: row wrap;
+            list-style: none;
+            flex: auto;
+            li {
+                animation: search-motion 0.5s ease-in-out;
+                margin: 0 10px 10px;
+                flex-basis: 100%;
+                width: calc(100% - 20px);
+                button {
+                    position: relative;
+                    border: 0;
+                    width: 100%;
+                    height: 100%;
+                    text-align: left;
+                    background: #fff;
+                    cursor: pointer;
+                    outline: none;
+                    border: 0.6vh solid #fff;
+                    border-radius: 1em;
+                    font-size: 1.6vh;
+                    h4 {
+                        margin: 0.4em 0 0.2em;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        pointer-events: none;
+                    }
+                    .link {
+                        color: $link-default-color;
+                        text-decoration: underline;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        pointer-events: none;
+                    }
+                    p {
+                        margin: 0.4em 0;
+                        color: #505050;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        height: 1.15em;
+                        white-space: nowrap;
+                        pointer-events: none;
+                    }
+                    &:hover,
+                    &:focus,
+                    &:focus-within {
+                        background-color: $bg-basic-color;
+                        border-color: $item-focused-border;
+                    }
+                }
+            }
+            li:nth-child(even) {
+                button {
+                    background: #f7f7f7;
+                    &:hover,
+                    &:focus,
+                    &:focus-within {
+                        background-color: $bg-basic-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes search-motion {
+    from {
+        opacity: 0;
+        transform-origin: left;
+        transform: translate(-250px, 0px);
+    }
+    to {
+        opacity: 1;
+        transform-origin: left;
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes no-result-motion {
+    from {
+        opacity: 0;
+        background-size: 7em;
+    }
+    to {
+        opacity: 1;
+        background-size: 3em;
+    }
+}

@@ -1,0 +1,225 @@
+{
+    "kind": "customsearch#search",
+    "url": {
+        "type": "application/json",
+        "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+    },
+    "queries": {
+        "request": [{
+            "title": "Google Custom Search - emma stone film",
+            "totalResults": "771000000",
+            "searchTerms": "emma stone film",
+            "count": 9,
+            "startIndex": 1,
+            "inputEncoding": "utf8",
+            "outputEncoding": "utf8",
+            "safe": "off",
+            "cx": "c9673b3bf20f33c21",
+            "searchType": "image",
+            "imgSize": "medium"
+        }],
+        "nextPage": [{
+            "title": "Google Custom Search - emma stone film",
+            "totalResults": "771000000",
+            "searchTerms": "emma stone film",
+            "count": 9,
+            "startIndex": 10,
+            "inputEncoding": "utf8",
+            "outputEncoding": "utf8",
+            "safe": "off",
+            "cx": "c9673b3bf20f33c21",
+            "searchType": "image",
+            "imgSize": "medium"
+        }]
+    },
+    "context": {
+        "title": "sample1"
+    },
+    "searchInformation": {
+        "searchTime": 0.701503,
+        "formattedSearchTime": "0.70",
+        "totalResults": "771000000",
+        "formattedTotalResults": "771,000,000"
+    },
+    "items": [{
+            "kind": "customsearch#result",
+            "title": "Emma Stone - Wikipedia",
+            "htmlTitle": "<b>Emma Stone</b> - Wikipedia",
+            "link": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Emma_Stone_at_the_39th_Mill_Valley_Film_Festival_%28cropped%29.jpg/220px-Emma_Stone_at_the_39th_Mill_Valley_Film_Festival_%28cropped%29.jpg",
+            "displayLink": "en.wikipedia.org",
+            "snippet": "Emma Stone - Wikipedia",
+            "htmlSnippet": "<b>Emma Stone</b> - Wikipedia",
+            "mime": "image/jpeg",
+            "fileFormat": "image/jpeg",
+            "image": {
+                "contextLink": "https://en.wikipedia.org/wiki/Emma_Stone",
+                "height": 301,
+                "width": 220,
+                "byteSize": 22519,
+                "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbVj4HrBsnDtHUqojnCqAwVxTKVcb6sLMIgdP5veBJ8XwYda6iQjSo&s",
+                "thumbnailHeight": 116,
+                "thumbnailWidth": 85
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Why Emma Stone And Ryan Gosling Have Chemistry - VIX",
+            "htmlTitle": "Why <b>Emma Stone</b> And Ryan Gosling Have Chemistry - VIX",
+            "link": "https://static.vix.com/en/sites/default/files/t/this-is-the-secret-behind-the-undeniable-chemistry-between-emma-stone-and-ryan-gosling-4.gif",
+            "displayLink": "www.vix.com",
+            "snippet": "Why Emma Stone And Ryan Gosling Have Chemistry - VIX",
+            "htmlSnippet": "Why <b>Emma Stone</b> And Ryan Gosling Have Chemistry - VIX",
+            "mime": "image/gif",
+            "fileFormat": "image/gif",
+            "image": {
+                "contextLink": "https://www.vix.com/en/pop-culture/528309/secret-behind-undeniable-chemistry-between-emma-stone-and-ryan-gosling",
+                "height": 200,
+                "width": 400,
+                "byteSize": 950972,
+                "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT91nEiBgQT84y2TrxtlqPIFhElPDSowtvZZGObDULFiEldAok8Ly0r&s",
+                "thumbnailHeight": 62,
+                "thumbnailWidth": 124
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Emma Stone - Wikipedia",
+            "htmlTitle": "<b>Emma Stone</b> - Wikipedia",
+            "link": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Emma_Stone_%2830498079137%29_%28cropped%29.jpg/220px-Emma_Stone_%2830498079137%29_%28cropped%29.jpg",
+            "displayLink": "en.wikipedia.org",
+            "snippet": "Emma Stone - Wikipedia",
+            "htmlSnippet": "<b>Emma Stone</b> - Wikipedia",
+            "mime": "image/jpeg",
+            "fileFormat": "image/jpeg",
+            "image": {
+                "contextLink": "https://en.wikipedia.org/wiki/Emma_Stone",
+                "height": 268,
+                "width": 220,
+                "byteSize": 24824,
+                "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKk311FBFq7ZeXh3sNhpiUi0MK-K0cYXleOvE-YI7rx63l8XhaIGGmBQ&s",
+                "thumbnailHeight": 113,
+                "thumbnailWidth": 93
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Why Emma Stone And Ryan Gosling Have Chemistry - VIX",
+            "htmlTitle": "Why <b>Emma Stone</b> And Ryan Gosling Have Chemistry - VIX",
+            "link": "https://img.vixdata.io/pd/jpg-large/en/sites/default/files/t/this-is-the-secret-behind-the-undeniable-chemistry-between-emma-stone-and-ryan-gosling-4.gif",
+            "displayLink": "www.vix.com",
+            "snippet": "Why Emma Stone And Ryan Gosling Have Chemistry - VIX",
+            "htmlSnippet": "Why <b>Emma Stone</b> And Ryan Gosling Have Chemistry - VIX",
+            "mime": "image/gif",
+            "fileFormat": "image/gif",
+            "image": {
+                "contextLink": "https://www.vix.com/en/pop-culture/528309/secret-behind-undeniable-chemistry-between-emma-stone-and-ryan-gosling",
+                "height": 200,
+                "width": 400,
+                "byteSize": 15330,
+                "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaTT6BQT10NEBPTKjzUop2B3AwPuIEcGtaM--SyRe-RmZJHzsOfL6z&s",
+                "thumbnailHeight": 62,
+                "thumbnailWidth": 124
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Emma Stone Sits Behind Andrew Garfield at '99 Homes' Venice Film ...",
+            "htmlTitle": "<b>Emma Stone</b> Sits Behind Andrew Garfield at &#39;99 Homes&#39; Venice <b>Film</b> ...",
+            "link": "http://cdn01.cdn.justjaredjr.com/wp-content/uploads/headlines/2014/08/andrew-garfield-emma-stone-99-homes-premiere-venice.jpg",
+            "displayLink": "www.justjaredjr.com",
+            "snippet": "Emma Stone Sits Behind Andrew Garfield at '99 Homes' Venice Film ...",
+            "htmlSnippet": "<b>Emma Stone</b> Sits Behind Andrew Garfield at &#39;99 Homes&#39; Venice <b>Film</b> ...",
+            "mime": "image/jpeg",
+            "fileFormat": "image/jpeg",
+            "image": {
+                "contextLink": "http://www.justjaredjr.com/2014/08/30/emma-stone-sits-behind-andrew-garfield-at-99-homes-venice-film-festival-premiere/",
+                "height": 300,
+                "width": 300,
+                "byteSize": 32408,
+                "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoDI24BcUjvUtCUbKcfnlzJvB_HIiZaQZwxcIvr_Jlsw6I8eEmYEEQ&s",
+                "thumbnailHeight": 116,
+                "thumbnailWidth": 116
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Ryan Gosling & Emma Stone Arrive for Venice Film Festival 2018 ...",
+            "htmlTitle": "Ryan Gosling &amp; <b>Emma Stone</b> Arrive for Venice <b>Film</b> Festival 2018 ...",
+            "link": "http://cdn02.cdn.justjared.com/wp-content/uploads/headlines/2018/08/emma-stone-ryan-gosling-arrive-venice.jpg",
+            "displayLink": "www.justjared.com",
+            "snippet": "Ryan Gosling & Emma Stone Arrive for Venice Film Festival 2018 ...",
+            "htmlSnippet": "Ryan Gosling &amp; <b>Emma Stone</b> Arrive for Venice <b>Film</b> Festival 2018 ...",
+            "mime": "image/jpeg",
+            "fileFormat": "image/jpeg",
+            "image": {
+                "contextLink": "http://www.justjared.com/2018/08/29/ryan-gosling-emma-stone-arrive-for-venice-film-festival-2018/",
+                "height": 300,
+                "width": 300,
+                "byteSize": 54694,
+                "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCH3RjTUZ0MI0xm16qfwAqaTwOdCjRPJEyB9IOidnfPzdht_x1y7Ad&s",
+                "thumbnailHeight": 116,
+                "thumbnailWidth": 116
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Emma Stone Looks Like She's About to Flip for Untitled Woody Allen ...",
+            "htmlTitle": "<b>Emma Stone</b> Looks Like She&#39;s About to Flip for Untitled Woody Allen ...",
+            "link": "http://cdn01.cdn.justjaredjr.com/wp-content/uploads/headlines/2014/08/emma-stone-is-having-a-fit-for-a-scene-woody-allen-film.jpg",
+            "displayLink": "www.justjaredjr.com",
+            "snippet": "Emma Stone Looks Like She's About to Flip for Untitled Woody Allen ...",
+            "htmlSnippet": "<b>Emma Stone</b> Looks Like She&#39;s About to Flip for Untitled Woody Allen ...",
+            "mime": "image/jpeg",
+            "fileFormat": "image/jpeg",
+            "image": {
+                "contextLink": "http://www.justjaredjr.com/2014/08/06/emma-stone-looks-like-shes-about-to-flip-for-untitled-woody-allen-film/",
+                "height": 300,
+                "width": 300,
+                "byteSize": 72857,
+                "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9hKHjvO3TCCq6w0Kq5vcSyPlLYDB7ttTaUcBEFJAzsC2yXtyD1vIQXg&s",
+                "thumbnailHeight": 116,
+                "thumbnailWidth": 116
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "File:Emma Stone at the 39th Mill Valley Film Festival (cropped ...",
+            "htmlTitle": "File:<b>Emma Stone</b> at the 39th Mill Valley <b>Film</b> Festival (cropped ...",
+            "link": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Emma_Stone_at_the_39th_Mill_Valley_Film_Festival_%28cropped%29.jpg/175px-Emma_Stone_at_the_39th_Mill_Valley_Film_Festival_%28cropped%29.jpg",
+            "displayLink": "commons.wikimedia.org",
+            "snippet": "File:Emma Stone at the 39th Mill Valley Film Festival (cropped ...",
+            "htmlSnippet": "File:<b>Emma Stone</b> at the 39th Mill Valley <b>Film</b> Festival (cropped ...",
+            "mime": "image/jpeg",
+            "fileFormat": "image/jpeg",
+            "image": {
+                "contextLink": "https://commons.wikimedia.org/wiki/File:Emma_Stone_at_the_39th_Mill_Valley_Film_Festival_(cropped).jpg",
+                "height": 239,
+                "width": 175,
+                "byteSize": 15128,
+                "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHBYcrskeG7V2Bnu6Gx35z5vIa7V4gW5syVTdq7ULouFIUsVAVbsyS&s",
+                "thumbnailHeight": 109,
+                "thumbnailWidth": 80
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Emma Stone sports blonde cropped wig as she emulates Cruella de ...",
+            "htmlTitle": "<b>Emma Stone</b> sports blonde cropped wig as she emulates Cruella de ...",
+            "link": "https://i.dailymail.co.uk/1s/2019/11/03/10/20539048-0-image-m-4_1572777872239.jpg",
+            "displayLink": "www.dailymail.co.uk",
+            "snippet": "Emma Stone sports blonde cropped wig as she emulates Cruella de ...",
+            "htmlSnippet": "<b>Emma Stone</b> sports blonde cropped wig as she emulates Cruella de ...",
+            "mime": "image/jpeg",
+            "fileFormat": "image/jpeg",
+            "image": {
+                "contextLink": "https://www.dailymail.co.uk/tvshowbiz/article-7644375/Emma-Stone-sports-blonde-cropped-wig-emulates-Cruella-Vil-set-Disney-film-London.html",
+                "height": 185,
+                "width": 308,
+                "byteSize": 22963,
+                "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqOpNmQZ0agbXEW3pyuWNJJCWXQV6y_E8Gpmp0q_KtYP7zjnMAuEfPkA&s",
+                "thumbnailHeight": 70,
+                "thumbnailWidth": 117
+            }
+        }
+    ]
+}

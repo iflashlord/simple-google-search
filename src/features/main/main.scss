@@ -1,0 +1,67 @@
+@import "./../../assets/styles/default.scss";
+
+/*
+* main page style
+*/
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 3em 5em;
+    background: $bg-basic-color;
+    background: linear-gradient(90deg, $bg-start-gradient-color 0%, $bg-end-gradient-color 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+header,
+aside {
+    padding: 1em 0;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.loading {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../assets/img/loading.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    bottom: 0;
+    right: 0;
+    display: none;
+    animation: loading-motion 0.3s ease-in-out;
+}
+
+@keyframes loading-motion {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,73 @@
+@import './../../assets/styles/default.scss';
+
+/*
+* header style for search form and buttons
+*/
+
+header {
+    animation: header-motion 0.5s ease-in-out;
+    #search-form {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        input[type="search"] {
+            border: 0.2em solid $border-color;
+            color: $text-color;
+            border-radius: 0.5em;
+            background: #fff;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 0.35em 0.75em;
+            font-size: 3vh;
+            text-decoration: none;
+            line-height: normal;
+            flex: 2 0 50%;
+            &:focus,
+            &:focus-within {
+                background: $button-focused-bg;
+                color: $button-focused-color;
+                border-color: $border-focused-color;
+                transition: background 400ms ease-in-out;
+                outline: none;
+            }
+        }
+        button {
+            flex: 1 0;
+            font-size: 3vh;
+            border: 0.2em solid $border-color;
+            border-radius: 0.5em;
+            background: silver;
+            color: #fff;
+            padding: 0.35em 0.75em;
+            margin-left: 1em;
+            cursor: pointer;
+            outline: none;
+            &:hover,
+            &:focus,
+            &:focus-within {
+                background: $button-focused-bg;
+                color: $button-focused-color;
+                border-color: $border-focused-color;
+                transition: 400ms ease-in-out;
+            }
+            &#next-button,
+            &#previous-button {
+                padding: 0.35em 0em;
+            }
+        }
+    }
+}
+
+@keyframes header-motion {
+    from {
+        opacity: 0;
+        transform-origin: left;
+        transform: translate(-550px, 0px);
+    }
+    to {
+        opacity: 1;
+        transform-origin: left;
+        transform: translate(0px, 0px);
+    }
+}

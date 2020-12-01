@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<!------------------------------
+        \^^^^^^^^\   (__)
+        \^^^^^^^^\\ (oo)
+     *-----\_______\/\/
+   ^_______/   ---  \______^
+  ^--------\   \S/  /\_____^
+            \______/
+      Simple Google Search 
+        Behrouz Pooladrk
+    http://www.iflashlord.com
+-------------------------------->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Simple Google Search</title>
+    <style>
+        body {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <!-- Section search -->
+        <form id="search-form">
+            <input role="searchbox" autofocus placeholder="Search..." type="search" name="search" id="search-box" />
+            <button role="search" type="submit" id="search-button">Search</button>
+            <button role="button" type="button" id="previous-button" class="">⬅</button>
+            <button role="button" type="button" id="next-button" class="">⮕</button>
+        </form>
+
+    </header>
+
+
+    <main>
+
+        <!-- Section Image Result -->
+        <aside class="image-result" id="image-results-section">
+            <h2>Image Result</h2>
+            <ul role="listbox" aria-label="Image Result">
+                <!-- Results placeholder -->
+            </ul>
+            <div class="loading"></div>
+        </aside>
+
+
+        <!-- Section Web Result -->
+        <aside class="web-result" id="web-results-section">
+            <h2>Web Result</h2>
+            <ul role="listitem" aria-label="Web Result">
+                <!-- Results placeholder -->
+            </ul>
+            <div class="loading"></div>
+        </aside>
+
+
+    </main>
+
+</body>
+
+
+</html>

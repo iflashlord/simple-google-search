@@ -1,0 +1,333 @@
+{
+    "kind": "customsearch#search",
+    "url": {
+        "type": "application/json",
+        "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+    },
+    "queries": {
+        "request": [{
+            "title": "Google Custom Search - emma stone",
+            "totalResults": "229000000",
+            "searchTerms": "emma stone",
+            "count": 6,
+            "startIndex": 1,
+            "inputEncoding": "utf8",
+            "outputEncoding": "utf8",
+            "safe": "off",
+            "cx": "c9673b3bf20f33c21"
+        }],
+        "nextPage": [{
+            "title": "Google Custom Search - emma stone",
+            "totalResults": "229000000",
+            "searchTerms": "emma stone",
+            "count": 6,
+            "startIndex": 7,
+            "inputEncoding": "utf8",
+            "outputEncoding": "utf8",
+            "safe": "off",
+            "cx": "c9673b3bf20f33c21"
+        }]
+    },
+    "context": {
+        "title": "sample1"
+    },
+    "searchInformation": {
+        "searchTime": 0.633826,
+        "formattedSearchTime": "0.63",
+        "totalResults": "229000000",
+        "formattedTotalResults": "229,000,000"
+    },
+    "items": [{
+            "kind": "customsearch#result",
+            "title": "Emma Stone - IMDb",
+            "htmlTitle": "<b>Emma Stone</b> - IMDb",
+            "link": "https://www.imdb.com/name/nm1297015/",
+            "displayLink": "www.imdb.com",
+            "snippet": "Emma Stone, Actress: La La Land. Emily Jean \"Emma\" Stone was born in \nScottsdale, Arizona, to Krista (Yeager), a homemaker, and Jeffrey Charles Stone,\n ...",
+            "htmlSnippet": "<b>Emma Stone</b>, Actress: La La Land. Emily Jean &quot;<b>Emma</b>&quot; <b>Stone</b> was born in <br>\nScottsdale, Arizona, to Krista (Yeager), a homemaker, and Jeffrey Charles Stone,<br>\n&nbsp;...",
+            "cacheId": "ReOzWda6gyEJ",
+            "formattedUrl": "https://www.imdb.com/name/nm1297015/",
+            "htmlFormattedUrl": "https://www.imdb.com/name/nm1297015/",
+            "pagemap": {
+                "cse_thumbnail": [{
+                    "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSWzLEkY1sIGgjuOBJ6XKmfNjU4NvKomHQJo_mqeoSJw3Lwabj26A6sZzG0",
+                    "width": "163",
+                    "height": "310"
+                }],
+                "metatags": [{
+                    "pagetype": "name",
+                    "apple-itunes-app": "app-id=342792525, app-argument=imdb:///name/nm1297015?src=mdot",
+                    "subpagetype": "main",
+                    "og:image": "https://m.media-amazon.com/images/M/MV5BMjI4NjM1NDkyN15BMl5BanBnXkFtZTgwODgyNTY1MjE@._V1_UY1200_CR84,0,630,1200_AL_.jpg",
+                    "theme-color": "#000000",
+                    "og:type": "actor",
+                    "og:site_name": "IMDb",
+                    "og:title": "Emma Stone - IMDb",
+                    "pageid": "nm1297015",
+                    "title": "Emma Stone - IMDb",
+                    "og:description": "Emma Stone, Actress: La La Land. Emily Jean \"Emma\" Stone was born in Scottsdale, Arizona, to Krista (Yeager), a homemaker, and Jeffrey Charles Stone, a contracting company founder and CEO. She is of Swedish, German, and British Isles descent. Stone began acting as a child as a member of the Valley Youth Theatre in Phoenix, Arizona, where she made her stage debut in a production ...",
+                    "fb:app_id": "115109575169727",
+                    "og:url": "http://www.imdb.com/name/nm1297015/",
+                    "request_id": "N38G0XC095JH3M6TGCQD"
+                }],
+                "cse_image": [{
+                    "src": "https://m.media-amazon.com/images/M/MV5BMjI4NjM1NDkyN15BMl5BanBnXkFtZTgwODgyNTY1MjE@._V1_UY1200_CR84,0,630,1200_AL_.jpg"
+                }]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Emma Stone - Wikipedia",
+            "htmlTitle": "<b>Emma Stone</b> - Wikipedia",
+            "link": "https://en.wikipedia.org/wiki/Emma_Stone",
+            "displayLink": "en.wikipedia.org",
+            "snippet": "Emily Jean \"Emma\" Stone (born November 6, 1988) is an American actress. The \nrecipient of several accolades, including an Academy Award, a British Academy ...",
+            "htmlSnippet": "Emily Jean &quot;<b>Emma</b>&quot; <b>Stone</b> (born November 6, 1988) is an American actress. The <br>\nrecipient of several accolades, including an Academy Award, a British Academy&nbsp;...",
+            "cacheId": "lK56ODXSPPwJ",
+            "formattedUrl": "https://en.wikipedia.org/wiki/Emma_Stone",
+            "htmlFormattedUrl": "https://en.wikipedia.org/wiki/<b>Emma</b>_<b>Stone</b>",
+            "pagemap": {
+                "hcard": [{
+                    "role": "Actress",
+                    "bday": "1988-11-06",
+                    "fn": "Emma Stone",
+                    "nickname": "Emily Jean Stone"
+                }],
+                "cse_thumbnail": [{
+                    "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTdN5YKfaPK3KvETRNOY9OhgM-eQoZaDfdC-wOqpRnilmYrH4WvmyPcCw2F",
+                    "width": "192",
+                    "height": "263"
+                }],
+                "person": [{
+                    "role": "Actress"
+                }],
+                "metatags": [{
+                    "referrer": "origin",
+                    "og:image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Emma_Stone_at_the_39th_Mill_Valley_Film_Festival_%28cropped%29.jpg"
+                }],
+                "cse_image": [{
+                    "src": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Emma_Stone_at_the_39th_Mill_Valley_Film_Festival_%28cropped%29.jpg"
+                }]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Emma Stone (@emmastone) • Instagram photos and videos",
+            "htmlTitle": "<b>Emma Stone</b> (@<b>emmastone</b>) • Instagram photos and videos",
+            "link": "https://www.instagram.com/emmastone/?hl=en",
+            "displayLink": "www.instagram.com",
+            "snippet": "359.8k Followers, 51 Following, 57 Posts - See Instagram photos and videos \nfrom Emma Stone (@emmastone)",
+            "htmlSnippet": "359.8k Followers, 51 Following, 57 Posts - See Instagram photos and videos <br>\nfrom <b>Emma Stone</b> (@<b>emmastone</b>)",
+            "formattedUrl": "https://www.instagram.com/emmastone/?hl=en",
+            "htmlFormattedUrl": "https://www.instagram.com/<b>emmastone</b>/?hl=en",
+            "pagemap": {
+                "metatags": [{
+                    "og:image": "https://scontent-atl3-2.cdninstagram.com/v/t51.2885-19/11931151_1637660089826030_147599813_a.jpg?_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_ohc=aCkqRKkP5XEAX_1Npll&oh=a0e455b83debad25f83b0fe8e48a8fff&oe=5FEEB48E",
+                    "theme-color": "#ffffff",
+                    "og:type": "profile",
+                    "al:ios:app_name": "Instagram",
+                    "og:title": "Emma Stone is on Instagram • 57 posts on their profile",
+                    "al:android:package": "com.instagram.android",
+                    "al:ios:url": "instagram://user?username=emmastone",
+                    "og:description": "359.8k Followers, 51 Following, 57 Posts - See Instagram photos and videos from Emma Stone (@emmastone)",
+                    "al:ios:app_store_id": "389801252",
+                    "al:android:url": "https://www.instagram.com/_u/emmastone/",
+                    "apple-mobile-web-app-status-bar-style": "default",
+                    "viewport": "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover",
+                    "mobile-web-app-capable": "yes",
+                    "og:url": "https://www.instagram.com/emmastone/",
+                    "al:android:app_name": "Instagram"
+                }],
+                "cse_image": [{
+                    "src": "https://scontent-atl3-2.cdninstagram.com/v/t51.2885-19/11931151_1637660089826030_147599813_a.jpg?_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_ohc=aCkqRKkP5XEAX_1Npll&oh=a0e455b83debad25f83b0fe8e48a8fff&oe=5FEEB48E"
+                }]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Emma Stone - Movies, Age & Husband - Biography",
+            "htmlTitle": "<b>Emma Stone</b> - Movies, Age &amp; Husband - Biography",
+            "link": "https://www.biography.com/actor/emma-stone",
+            "displayLink": "www.biography.com",
+            "snippet": "Sep 28, 2020 ... Emma Stone is an Academy Award-winning actress best known for her roles in \nfilms including 'The Help,' 'Crazy, Stupid, Love,' 'The Amazing ...",
+            "htmlSnippet": "Sep 28, 2020 <b>...</b> <b>Emma Stone</b> is an Academy Award-winning actress best known for her roles in <br>\nfilms including &#39;The Help,&#39; &#39;Crazy, Stupid, Love,&#39; &#39;The Amazing&nbsp;...",
+            "cacheId": "KeA351qbczIJ",
+            "formattedUrl": "https://www.biography.com/actor/emma-stone",
+            "htmlFormattedUrl": "https://www.biography.com/actor/<b>emma</b>-<b>stone</b>",
+            "pagemap": {
+                "cse_thumbnail": [{
+                    "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQbWQ2VbMeOekk93PffN1i-xVAdjfSd3NXb6Xvzmbh4VNmFi6nVzhOCGW5H",
+                    "width": "225",
+                    "height": "225"
+                }],
+                "metatags": [{
+                    "pagetype": "person",
+                    "og:image": "https://www.biography.com/.image/t_share/MTE5NTU2MzE2NTUxNjExOTE1/the-amazing-spiderman---los-angeles-premiere---arrivals.jpg",
+                    "twitter:card": "summary_large_image",
+                    "og:site_name": "Biography",
+                    "twitter:url": "https://www.biography.com/actor/emma-stone",
+                    "apple-mobile-web-app-title": "Biography",
+                    "section": "Actors",
+                    "phx:content-item-id": "ci01a33b7a1ab3860e",
+                    "og:description": "Emma Stone is an Academy Award-winning actress best known for her roles in films including 'The Help,' 'Crazy, Stupid, Love,' 'The Amazing Spider-Man' and 'La La Land.'",
+                    "twitter:image": "https://www.biography.com/.image/t_share/MTE5NTU2MzE2NTUxNjExOTE1/the-amazing-spiderman---los-angeles-premiere---arrivals.jpg",
+                    "dcterms.rightsholder": "Biography and the Biography logo are registered trademarks of A&E Television Networks, LLC.",
+                    "phx:content-object-type": "ContentPerson",
+                    "twitter:site": "@bio",
+                    "parsely-link": "https://www.biography.com/actor/emma-stone",
+                    "sailthru.title": "Emma Stone",
+                    "parsely-image-url": "https://www.biography.com/.image/c_fill%2Ccs_srgb%2Cfl_progressive%2Ch_400%2Cq_auto:good%2Cw_620/MTE5NTU2MzE2NTUxNjExOTE1/the-amazing-spiderman---los-angeles-premiere---arrivals.jpg",
+                    "modified": "2020-09-28T14:22:04Z",
+                    "parsely-section": "Actors",
+                    "dcterms.datecopyrighted": "2020",
+                    "sailthru.date": "2017-12-11T16:54:39Z",
+                    "og:type": "website",
+                    "twitter:domain": "www.biography.com",
+                    "parsely-post-id": "ci01a33b7a1ab3860e",
+                    "handheldfriendly": "True",
+                    "msvalidate.01": "565AA37CB662E60BF24DDCABEC686D8F",
+                    "og:title": "Emma Stone",
+                    "pinterest": "nohover",
+                    "published": "2017-12-11T16:54:39Z",
+                    "fb:pages": "123492867697144",
+                    "parsely-title": "Emma Stone - Biography",
+                    "parsely-pub-date": "2017-12-11T16:54:39Z",
+                    "pinterest-rich-pin": "true",
+                    "referrer": "unsafe-url",
+                    "fb:app_id": "104784826244596",
+                    "parsely-tags": "Ryan Gosling,Jennifer Lawrence",
+                    "sailthru.description": "Emma Stone is an Academy Award-winning actress best known for her roles in films including 'The Help,' 'Crazy, Stupid, Love,' 'The Amazing Spider-Man' and 'La La Land.'",
+                    "apple-mobile-web-app-status-bar-style": "black",
+                    "item-id": "ci01a33b7a1ab3860e",
+                    "viewport": "width=device-width, initial-scale=1",
+                    "twitter:description": "Emma Stone is an Academy Award-winning actress best known for her roles in films including 'The Help,' 'Crazy, Stupid, Love,' 'The Amazing Spider-Man' and 'La La Land.'",
+                    "apple-mobile-web-app-capable": "no",
+                    "mobileoptimized": "320",
+                    "og:url": "https://www.biography.com/actor/emma-stone",
+                    "sailthru.image.full": "https://www.biography.com/.image/t_share/MTE5NTU2MzE2NTUxNjExOTE1/the-amazing-spiderman---los-angeles-premiere---arrivals.jpg",
+                    "format-detection": "telephone=no"
+                }],
+                "cse_image": [{
+                    "src": "https://www.biography.com/.image/t_share/MTE5NTU2MzE2NTUxNjExOTE1/the-amazing-spiderman---los-angeles-premiere---arrivals.jpg"
+                }]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Emma Stone Reveals Monica From Friends Inspired Her Voice ...",
+            "htmlTitle": "<b>Emma Stone</b> Reveals Monica From Friends Inspired Her Voice ...",
+            "link": "https://www.youtube.com/watch?v=cD6Q3mnDmu4",
+            "displayLink": "www.youtube.com",
+            "snippet": "6 days ago ... Emma Stone talks about returning as Eep in The Croods: A New Age, explains \nthe voice-acting process for her character and sets up the film.",
+            "htmlSnippet": "6 days ago <b>...</b> <b>Emma Stone</b> talks about returning as Eep in The Croods: A New Age, explains <br>\nthe voice-acting process for her character and sets up the film.",
+            "formattedUrl": "https://www.youtube.com/watch?v=cD6Q3mnDmu4",
+            "htmlFormattedUrl": "https://www.youtube.com/watch?v=cD6Q3mnDmu4",
+            "pagemap": {
+                "cse_thumbnail": [{
+                    "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRymbe_uwOZSAsZ_T6tLKVdp68U3P2OTdnEHFzzFpnB6A3-rl2DPceoQoQ",
+                    "width": "168",
+                    "height": "94"
+                }],
+                "imageobject": [{
+                    "width": "1280",
+                    "url": "https://i.ytimg.com/vi/cD6Q3mnDmu4/maxresdefault.jpg",
+                    "height": "720"
+                }],
+                "person": [{
+                    "name": "The Tonight Show Starring Jimmy Fallon",
+                    "url": "http://www.youtube.com/user/latenight"
+                }],
+                "metatags": [{
+                    "og:image": "https://i.ytimg.com/vi/cD6Q3mnDmu4/maxresdefault.jpg",
+                    "theme-color": "rgba(255,255,255,0.98)",
+                    "og:image:width": "1280",
+                    "og:type": "video.other",
+                    "og:site_name": "YouTube",
+                    "al:ios:app_name": "YouTube",
+                    "og:title": "Emma Stone Reveals Monica From Friends Inspired Her Voice-Acting in The Croods: A New Age",
+                    "og:image:height": "720",
+                    "al:android:package": "com.google.android.youtube",
+                    "title": "Emma Stone Reveals Monica From Friends Inspired Her Voice-Acting in The Croods: A New Age",
+                    "al:ios:url": "vnd.youtube://www.youtube.com/watch?v=cD6Q3mnDmu4&feature=applinks",
+                    "al:web:url": "http://www.youtube.com/watch?v=cD6Q3mnDmu4&feature=applinks",
+                    "og:video:secure_url": "https://www.youtube.com/embed/cD6Q3mnDmu4",
+                    "og:video:tag": "Tonight Show",
+                    "og:description": "Emma Stone talks about returning as Eep in The Croods: A New Age, explains the voice-acting process for her character and sets up the film.The Tonight Show S...",
+                    "og:video:width": "1280",
+                    "al:ios:app_store_id": "544007664",
+                    "al:android:url": "vnd.youtube://www.youtube.com/watch?v=cD6Q3mnDmu4&feature=applinks",
+                    "og:video:type": "text/html",
+                    "og:video:height": "720",
+                    "og:video:url": "https://www.youtube.com/embed/cD6Q3mnDmu4",
+                    "og:url": "https://www.youtube.com/watch?v=cD6Q3mnDmu4",
+                    "al:android:app_name": "YouTube"
+                }],
+                "videoobject": [{
+                    "embedurl": "https://www.youtube.com/embed/cD6Q3mnDmu4",
+                    "playertype": "HTML5 Flash",
+                    "isfamilyfriendly": "true",
+                    "uploaddate": "2020-11-23",
+                    "description": "Emma Stone talks about returning as Eep in The Croods: A New Age, explains the voice-acting process for her character and sets up the film.The Tonight Show S...",
+                    "videoid": "cD6Q3mnDmu4",
+                    "url": "https://www.youtube.com/watch?v=cD6Q3mnDmu4",
+                    "duration": "PT3M32S",
+                    "unlisted": "False",
+                    "name": "Emma Stone Reveals Monica From Friends Inspired Her Voice-Acting in The Croods: A New Age",
+                    "paid": "False",
+                    "width": "1280",
+                    "regionsallowed": "AD,AE,AF,AG,AI,AL,AM,AQ,AR,AS,AT,AU,AW,AX,AZ,BA,BB,BD,BE,BG,BH,BL,BM,BN,BO,BQ,BR,BS,BT,BV,BY,BZ,CA,CC,CH,CK,CL,CN,CO,CR,CU,CW,CX,CY,CZ,DE,DK,DM,DO,EC,EE,EH,ES,FI,FJ,FK,FM,FO,FR,GB,GD,GE,GF,GG,GI,GL...",
+                    "genre": "Comedy",
+                    "interactioncount": "114624",
+                    "channelid": "UC8-Th83bH_thdKZDJCrn88g",
+                    "datepublished": "2020-11-23",
+                    "thumbnailurl": "https://i.ytimg.com/vi/cD6Q3mnDmu4/maxresdefault.jpg",
+                    "height": "720"
+                }],
+                "cse_image": [{
+                    "src": "https://i.ytimg.com/vi/IZ_SFbaysHk/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDp3K9u20Cb6tk4bM3rOY7T8AefIw"
+                }]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Emma Stone - Rotten Tomatoes",
+            "htmlTitle": "<b>Emma Stone</b> - Rotten Tomatoes",
+            "link": "https://www.rottentomatoes.com/celebrity/emma-stone",
+            "displayLink": "www.rottentomatoes.com",
+            "snippet": "American actress Emma Stone broke out of her early teen comedy roles to \nbecome one of the most celebrated actors of her generation. A native of \nScottsdale, ...",
+            "htmlSnippet": "American actress <b>Emma Stone</b> broke out of her early teen comedy roles to <br>\nbecome one of the most celebrated actors of her generation. A native of <br>\nScottsdale,&nbsp;...",
+            "cacheId": "jUGKFaWWg2UJ",
+            "formattedUrl": "https://www.rottentomatoes.com/celebrity/emma-stone",
+            "htmlFormattedUrl": "https://www.rottentomatoes.com/celebrity/<b>emma</b>-<b>stone</b>",
+            "pagemap": {
+                "cse_thumbnail": [{
+                    "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTTarZnzHI7cUWgk2qFWGTGn82p0VdGFYZuEq_I71k_RpAJaH7_8r4MURIf",
+                    "width": "183",
+                    "height": "275"
+                }],
+                "metatags": [{
+                    "og:image": "https://resizing.flixster.com/REzvpxNbL3G4bPUnygD5WYSXI7c=/1200x1800/v1.bjs3NTA5NDM7ajsxODYzODsxMjAwOzEyMDA7MTgwMA",
+                    "og:type": "profile",
+                    "twitter:card": "summary_large_image",
+                    "twitter:title": "Emma Stone",
+                    "theme-color": "#FA320A",
+                    "og:site_name": "Rotten Tomatoes",
+                    "msvalidate.01": "034F16304017CA7DCF45D43850915323",
+                    "og:title": "Emma Stone",
+                    "og:description": "Emma Stone Celebrity Profile - Check out the latest Emma Stone photo gallery, biography, pics, pictures, interviews, news, forums and blogs at Rotten Tomatoes!",
+                    "twitter:image": "https://www.rottentomatoes.com/assets/pizza-pie/head-assets/images/RT_TwitterCard_2018.jpg",
+                    "twitter:text:title": "Emma Stone",
+                    "fb:app_id": "326803741017",
+                    "twitter:site": "@rottentomatoes",
+                    "viewport": "width=device-width, initial-scale=1",
+                    "twitter:description": "Emma Stone Celebrity Profile - Check out the latest Emma Stone photo gallery, biography, pics, pictures, interviews, news, forums and blogs at Rotten Tomatoes!",
+                    "og:locale": "en_US",
+                    "og:url": "https://www.rottentomatoes.com/celebrity/emma-stone"
+                }],
+                "cse_image": [{
+                    "src": "https://resizing.flixster.com/REzvpxNbL3G4bPUnygD5WYSXI7c=/1200x1800/v1.bjs3NTA5NDM7ajsxODYzODsxMjAwOzEyMDA7MTgwMA"
+                }]
+            }
+        }
+    ]
+}
