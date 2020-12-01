@@ -60,7 +60,8 @@
     },
     "dependencies": {
         "@babel/runtime": "^7.9.2",
-        "core-js": "^3.6.4"
+        "core-js": "^3.6.4",
+        "serve": "^11.3.2"
     },
     "browserslist": [
         ">0.2%",
