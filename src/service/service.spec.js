@@ -1,91 +1,85 @@
 import Service from "./service"
 
-var serviceClassSample
+var serviceTest
 describe("service.js", () => {
 
-    it("check generateUrl set type web", () => {
-        serviceClassSample = new Service("web", 9, 1)
-        serviceClassSample.generateUrl();
+    it("check url request for web", () => {
+        serviceTest = new Service("web", 9, 1)
+        serviceTest.requestUrl();
 
-        // check URL type is web
-        expect(serviceClassSample.requestUrl.indexOf("searchType=0")).not.toEqual(-1)
-        expect(serviceClassSample.requestUrl.indexOf("imgSize=medium")).toEqual(-1)
-        expect(serviceClassSample.requestUrl.indexOf("searchType=image")).toEqual(-1)
+        expect(serviceTest.requestUrl.indexOf("searchType=0")).not.toEqual(-1)
+        expect(serviceTest.requestUrl.indexOf("imgSize=medium")).toEqual(-1)
+        expect(serviceTest.requestUrl.indexOf("searchType=image")).toEqual(-1)
     })
 
-    it("check generateUrl set type image", () => {
-        serviceClassSample = new Service("image", 9, 1)
-        serviceClassSample.generateUrl();
+    it("check url request for image", () => {
+        serviceTest = new Service("image", 9, 1)
+        serviceTest.requestUrl();
 
-        // check URL type is image in query string
-        expect(serviceClassSample.requestUrl.indexOf("imgSize=medium")).not.toEqual(-1)
-        expect(serviceClassSample.requestUrl.indexOf("searchType=image")).not.toEqual(-1)
+        expect(serviceTest.url.indexOf("imgSize=medium")).not.toEqual(-1)
+        expect(serviceTest.url.indexOf("searchType=image")).not.toEqual(-1)
     })
 
 
-    it("check generateUrl set start and num", () => {
-        serviceClassSample = new Service("web", 10, 99)
-        serviceClassSample.generateUrl();
+    it("check url request for start and num", () => {
+        serviceTest = new Service("web", 10, 99)
+        serviceTest.requestUrl();
 
-        // check both start and num in query string
-        expect(serviceClassSample.requestUrl.indexOf("start=99")).not.toEqual(-1)
-        expect(serviceClassSample.requestUrl.indexOf("num=10")).not.toEqual(-1)
+        expect(serviceTest.url.indexOf("start=99")).not.toEqual(-1)
+        expect(serviceTest.url.indexOf("num=10")).not.toEqual(-1)
 
     })
 
-    it("check update for change query", () => {
-        serviceClassSample = new Service("web", 10, 99)
+    it("check update method to change query", () => {
+        serviceTest = new Service("web", 10, 99)
 
-        // check update the search query
-        serviceClassSample.update("updated string")
+        serviceTest.update("updated string")
 
-        expect(serviceClassSample.query).toEqual("updated string")
+        expect(serviceTest.query).toEqual("updated string")
 
-        // check update the search query
-        serviceClassSample.update("updated new string")
+        serviceTest.update("updated new string")
 
-        expect(serviceClassSample.query).toEqual("updated new string")
+        expect(serviceTest.query).toEqual("updated new string")
 
     })
-    it("check nextPage for change startFrom", () => {
-        serviceClassSample = new Service("web", 5, 1)
+    it("check nextPage method to change startFrom", () => {
+        serviceTest = new Service("web", 5, 1)
 
-        // check the initial value
-        expect(serviceClassSample.startFrom).toEqual(1)
+        expect(serviceTest.startFrom).toEqual(1)
 
         // one next page check current page + item per page
-        serviceClassSample.nextPage()
+        serviceTest.nextPage()
 
         // 5 + 1
-        expect(serviceClassSample.startFrom).toEqual(6)
+        expect(serviceTest.startFrom).toEqual(6)
 
         // two next page check
-        serviceClassSample.nextPage()
-        serviceClassSample.nextPage()
+        serviceTest.nextPage()
+        serviceTest.nextPage()
 
         // 6 + 5 + 5
-        expect(serviceClassSample.startFrom).toEqual(16)
+        expect(serviceTest.startFrom).toEqual(16)
 
     })
 
-    it("check prevPage for change startFrom", () => {
-        serviceClassSample = new Service("web", 5, 16)
+    it("check prevPage method to change startFrom", () => {
+        serviceTest = new Service("web", 5, 16)
 
         // check the initial value
-        expect(serviceClassSample.startFrom).toEqual(16)
+        expect(serviceTest.startFrom).toEqual(16)
 
         // one previous page check
-        serviceClassSample.prevPage()
+        serviceTest.prevPage()
 
         // 16 - 5
-        expect(serviceClassSample.startFrom).toEqual(11)
+        expect(serviceTest.startFrom).toEqual(11)
 
         // two previous page check
-        serviceClassSample.prevPage()
-        serviceClassSample.prevPage()
+        serviceTest.prevPage()
+        serviceTest.prevPage()
 
         // 11 - 5 - 5
-        expect(serviceClassSample.startFrom).toEqual(1)
+        expect(serviceTest.startFrom).toEqual(1)
 
     })
 

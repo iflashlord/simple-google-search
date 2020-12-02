@@ -38,18 +38,18 @@ export default class GeneralSearch {
         this.service.update(query)
 
         // last request URL to check with a new request
-        const lastRequestedURL = this.service.requestUrl;
+        const lastRequestedURL = this.service.url;
 
         // generate URL before request (it needs to reduce the number of requests)
-        this.service.generateUrl()
+        this.service.requestUrl()
 
         // prevent the re-render of the current request by URL 
-        if (lastRequestedURL === this.service.requestUrl) {
+        if (lastRequestedURL === this.service.url) {
             return;
         }
 
         // check if any cached result exist to use that instead of a new request
-        const cachedResult = this.cache.retrieve(this.service.requestUrl)
+        const cachedResult = this.cache.retrieve(this.service.url)
         if (cachedResult) {
             this.render(cachedResult, this.element)
             this.loading(false)
@@ -68,7 +68,7 @@ export default class GeneralSearch {
             }).then(response => {
 
                 // get response result through the store method to check cache first
-                const result = this.cache.store(this.service.requestUrl, response)
+                const result = this.cache.store(this.service.url, response)
 
                 this.render(result, this.element)
                 this.loading(false)

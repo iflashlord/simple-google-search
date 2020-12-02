@@ -13,7 +13,7 @@ export default class Service {
         this.numberPerPage = numberPerPage || 6 // max is 10
         this.startFrom = startFrom
         this.imgSize = "medium"
-        this.requestUrl = ""
+        this.url = ""
 
         this.baseURL = Config.baseURL || ""
         this.googleAPIKey = Config.googleAPIKey || ""
@@ -25,31 +25,31 @@ export default class Service {
      *
      * @memberof Service
      */
-    generateUrl() {
-        let requestUrl = `${this.baseURL}?key=${this.googleAPIKey}&cx=${this.googleCX}&q=${encodeURIComponent(this.query)}&start=${this.startFrom}&num=${this.numberPerPage}&searchType=${this.searchFor}`
+    requestUrl() {
+        let url = `${this.baseURL}?key=${this.googleAPIKey}&cx=${this.googleCX}&q=${encodeURIComponent(this.query)}&start=${this.startFrom}&num=${this.numberPerPage}&searchType=${this.searchFor}`
 
+        // add a new item to query string if "searchFor" is an image
         if (this.searchFor === "image") {
-            requestUrl += `&imgSize=${this.imgSize}`
+            url += `&imgSize=${this.imgSize}`
         }
 
-        this.requestUrl = requestUrl
+        this.url = url
     }
 
     /**
-     * generate url and request fetch
+     * generate url and use fetch to HTTP request
      *
      * @returns promise
      * @memberof Service
      */
     request() {
-        // make url ready
-        this.generateUrl()
-
-        return fetch(this.requestUrl)
+        this.requestUrl()
+        return fetch(this.url)
     }
 
     /**
      * update query with new one
+     * reset page number (startFrom) to the first one
      *
      * @param {string} newQuery string to search on google
      * @memberof Service
@@ -64,7 +64,7 @@ export default class Service {
 
     /**
      * next page based on the page items
-     * TODO: add limitation for next page based on the result total item, currently we only show the empty page
+     * TODO: add limitation for the next page by the total number  
      * @memberof Service
      */
     nextPage() {
