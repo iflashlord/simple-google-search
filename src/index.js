@@ -1,26 +1,26 @@
-import './features/main/main.scss'
-import './features/header/header.scss'
-import './features/search/search.scss'
+import "./features/main/main.scss"
+import "./features/header/header.scss"
+import "./features/search/search.scss"
 
 /*
  * main project file
  */
 
 // start development with local files
-// import dataWebSample from './data/sample-web-result.json'
-// import dataImageSample from './data/sample-image-result.json'
+// import dataWebSample from "./data/sample-web-result.json"
+// import dataImageSample from "./data/sample-image-result.json"
 
-import Service from './service/service'
-import ImageSearch from './features/search/imageSearch/imageSearch'
-import WebSearch from './features/search/webSearch/webSearch'
+import Service from "./service/service"
+import ImageSearch from "./features/search/imageSearch/imageSearch"
+import WebSearch from "./features/search/webSearch/webSearch"
 
 // define the selectors
-const searchForm = document.getElementById('search-form')
-const searchBox = document.getElementById('search-box')
-const imageResultSection = document.getElementById('image-results-section')
-const webResultSection = document.getElementById('web-results-section')
-const nextPageButton = document.getElementById('next-button')
-const previousPageButton = document.getElementById('previous-button')
+const searchForm = document.getElementById("search-form")
+const searchBox = document.getElementById("search-box")
+const imageResultSection = document.getElementById("image-results-section")
+const webResultSection = document.getElementById("web-results-section")
+const nextPageButton = document.getElementById("next-button")
+const previousPageButton = document.getElementById("previous-button")
 
 
 /**
@@ -45,18 +45,18 @@ const imageSearchFeature = new ImageSearch(imageService, imageResultSection)
  */
 // if (!searchBox.value) {
 //     searchBox.value = "Angelina jolie"
-//     imageSearchFeature.performSearch(searchBox.value)
-//     webSearchFeature.performSearch(searchBox.value)
+//     imageSearchFeature.search(searchBox.value)
+//     webSearchFeature.search(searchBox.value)
 // }
 
 /** 
  * define submit event for header form
  */
-searchForm.addEventListener('submit', (e) => {
+searchForm.addEventListener("submit", (e) => {
     e.preventDefault()
 
-    imageSearchFeature.performSearch(searchBox.value)
-    webSearchFeature.performSearch(searchBox.value)
+    imageSearchFeature.search(searchBox.value)
+    webSearchFeature.search(searchBox.value)
 
     return false;
 });
@@ -64,37 +64,38 @@ searchForm.addEventListener('submit', (e) => {
 /** 
  * define onsubmit event for header form
  */
-searchForm.addEventListener('onsubmit', (e) => {
+searchForm.addEventListener("onsubmit", (e) => {
     e.preventDefault()
 
-    imageSearchFeature.performSearch(searchBox.value)
-    webSearchFeature.performSearch(searchBox.value)
+    imageSearchFeature.search(searchBox.value)
+    webSearchFeature.search(searchBox.value)
 
     return false;
 })
 
+
 /** 
  * define click event on next page button
  */
-nextPageButton.addEventListener('click', (e) => {
+nextPageButton.addEventListener("click", (e) => {
     // image search
     imageSearchFeature.nextPage()
-    imageSearchFeature.performSearch(searchBox.value)
+    imageSearchFeature.search(searchBox.value)
 
     // Web search
     webSearchFeature.nextPage()
-    webSearchFeature.performSearch(searchBox.value)
+    webSearchFeature.search(searchBox.value)
 })
 
 /** 
  * define click event on previous page button
  */
-previousPageButton.addEventListener('click', (e) => {
+previousPageButton.addEventListener("click", (e) => {
     // image search
     imageSearchFeature.prevPage()
-    imageSearchFeature.performSearch(searchBox.value)
+    imageSearchFeature.search(searchBox.value)
 
     // Web search
     webSearchFeature.prevPage()
-    webSearchFeature.performSearch(searchBox.value)
+    webSearchFeature.search(searchBox.value)
 })

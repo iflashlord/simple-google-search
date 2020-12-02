@@ -1,7 +1,7 @@
-import Config from '../config/config.json'
+import Config from "../config/config.json"
 
 /**
- * service manager class
+ * service class
  *
  * @export
  * @class Service
@@ -9,14 +9,15 @@ import Config from '../config/config.json'
 export default class Service {
 
     constructor(searchFor, numberPerPage, startFrom) {
-        this.searchFor = searchFor === 'image' ? 'image' : 0
+        this.searchFor = searchFor === "image" ? "image" : 0
         this.numberPerPage = numberPerPage || 6 // max is 10
         this.startFrom = startFrom
-        this.imgSize = 'medium'
-        this.requestUrl = ''
-        this.baseURL = Config.baseURL || ''
-        this.googleAPIKey = Config.googleAPIKey || ''
-        this.googleCX = Config.googleCX || ''
+        this.imgSize = "medium"
+        this.requestUrl = ""
+
+        this.baseURL = Config.baseURL || ""
+        this.googleAPIKey = Config.googleAPIKey || ""
+        this.googleCX = Config.googleCX || ""
     }
 
     /**
@@ -24,10 +25,10 @@ export default class Service {
      *
      * @memberof Service
      */
-    generateURL() {
-        let requestUrl = `${this.baseURL}?key=${this.googleAPIKey}&cx=${this.googleCX}&q=${encodeURIComponent(this.querySearch)}&start=${this.startFrom}&num=${this.numberPerPage}&searchType=${this.searchFor}`
+    generateUrl() {
+        let requestUrl = `${this.baseURL}?key=${this.googleAPIKey}&cx=${this.googleCX}&q=${encodeURIComponent(this.query)}&start=${this.startFrom}&num=${this.numberPerPage}&searchType=${this.searchFor}`
 
-        if (this.searchFor === 'image') {
+        if (this.searchFor === "image") {
             requestUrl += `&imgSize=${this.imgSize}`
         }
 
@@ -42,7 +43,7 @@ export default class Service {
      */
     request() {
         // make url ready
-        this.generateURL()
+        this.generateUrl()
 
         return fetch(this.requestUrl)
     }
@@ -50,15 +51,15 @@ export default class Service {
     /**
      * update query with new one
      *
-     * @param {string} newQuerySearch string to search on google
+     * @param {string} newQuery string to search on google
      * @memberof Service
      */
-    updateQuery(newQuerySearch) {
-        if (this.querySearch !== newQuerySearch) {
+    update(newQuery) {
+        if (this.query !== newQuery) {
             this.startFrom = 1
         }
 
-        this.querySearch = newQuerySearch
+        this.query = newQuery
     }
 
     /**

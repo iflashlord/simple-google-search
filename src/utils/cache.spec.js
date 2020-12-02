@@ -1,36 +1,36 @@
-import Cache from './cache'
+import Cache from "./cache"
 
 var cacheTest
-describe('cache.js', () => {
+describe("cache.js", () => {
     beforeEach(() => {
         cacheTest = new Cache()
     })
 
-    it('check cache is null at first', () => {
+    it("check cache is null at first", () => {
         // check storage object to be clear at first
         expect(Object.entries(cacheTest.storage).length).toEqual(0)
     })
 
-    it('check cache works well', () => {
+    it("check cache works well", () => {
         // check store data 
-        cacheTest.store('sample', { data: true })
+        cacheTest.store("sample", { data: true })
 
         // check the length of storage if it has a value after store data in it
         expect(Object.entries(cacheTest.storage).length).toEqual(1)
 
         // check data stored by sample key if it has correct value
-        expect(cacheTest.storage['sample'].data).toEqual(true)
+        expect(cacheTest.storage["sample"].data).toEqual(true)
 
         // check retrieve method to retrieve the stored value by key
-        expect(cacheTest.retrieve('sample')).not.toEqual(false)
+        expect(cacheTest.retrieve("sample")).not.toEqual(false)
 
         // check retrieve method with unknown key to return null
-        expect(cacheTest.retrieve('unknown')).toEqual(null)
+        expect(cacheTest.retrieve("unknown")).toEqual(null)
 
     })
 
-    it('check clear cache', () => {
-        cacheTest.store('sample', { data: true })
+    it("check clear cache", () => {
+        cacheTest.store("sample", { data: true })
 
         // check if the storage has some data
         expect(Object.entries(cacheTest.storage).length).toEqual(1)

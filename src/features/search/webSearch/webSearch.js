@@ -1,4 +1,4 @@
-import GeneralSearch from '../generalSearch'
+import GeneralSearch from "../generalSearch"
 
 /**
  * class inherited from general search class for web search
@@ -16,7 +16,7 @@ export default class WebSearch extends GeneralSearch {
      * @returns string
      * @memberof WebSearch
      */
-    dataTemplate(data) {
+    renderTemplate(data) {
         const title = data.title
         const displayLink = data.displayLink
         const link = data.link
@@ -33,14 +33,14 @@ export default class WebSearch extends GeneralSearch {
 
     /**
      * override data specific to an item to do action
-     * data is the 'route' attribute on the templates
+     * data is the "route" attribute on the templates
      * 
      * @param {string} data string data comes from the route attribute on buttons
      * @memberof WebSearch
      */
     buttonAction(data) {
         // then use the route value to action
-        console.log('Action from Web Search', data)
+        console.log("Action from Web Search", data)
 
         // TODO: open proper dialog to show result
         window.open(data)

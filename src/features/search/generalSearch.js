@@ -1,56 +1,66 @@
-import Cache from './../../utils/cache'
+import Cache from "./../../utils/cache"
 
 /**
- * general class search
+ * general search class as the main class for both web and image
+ * the main goal is to search and render the result to the selected element
  *
  * @export
  * @class GeneralSearch
  */
 export default class GeneralSearch {
 
-    constructor(service, resultSectionElement) {
+    constructor(service, element) {
         this.service = service
-        this.resultSectionElement = resultSectionElement
+        this.element = element
 
-        // define a cache manager for requests
+        this.loadingElement = element.getElementsByClassName("loading")[0]
+        this.dataElement = element.querySelector("ul")
+
         this.cache = new Cache()
 
         // add an event to result section to handel all items in it
-        this.resultSectionElement.addEventListener('click', this.clickHandler.bind(this))
+        this.element.addEventListener("click", this.clickHandler.bind(this))
     }
 
     /**
      * request and get result
      *
-     * @param {string} querySearch word to search on google
+     * @param {string} query word to search on google
      * @memberof GeneralSearch
      */
-    performSearch(querySearch) {
-        if (querySearch != undefined && querySearch.length > 0) {
-            this.service.updateQuery(querySearch)
+    search(query) {
+        if (!query || query.trim().length == 0) {
+            this.render(null)
+            return;
         }
 
-        // show loading
-        this.handelLoading(true)
+        this.service.update(query)
 
+        // last request url to check with new request
+        const lastRequestURL = this.service.requestUrl;
 
-        // generate url before request
-        this.service.generateURL()
+        // generate url before request it needs to reduce 
+        this.service.generateUrl()
+
+        if (lastRequestURL === this.service.requestUrl) {
+            return;
+        }
 
         // check any cached version exist 
         const cachedResult = this.cache.retrieve(this.service.requestUrl)
         if (cachedResult) {
-            this.generator(cachedResult, this.resultSectionElement)
-            this.handelLoading(false)
+            this.render(cachedResult, this.element)
+            this.loading(false)
             return
         }
+
+        this.loading(true)
 
         // perform a request
         this.service.request().then(response => {
                 if (response.ok) {
                     return response.json()
                 } else {
-                    // manage errors
                     this.errorHandler(response)
                 }
             }).then(response => {
@@ -58,59 +68,47 @@ export default class GeneralSearch {
                 // manage store data on temporary cache storage
                 const managedResult = this.cache.store(this.service.requestUrl, response)
 
-                // run generator to generate items
-                this.generator(managedResult, this.resultSectionElement)
-                this.handelLoading(false)
+                // run render create html element on DOM
+                this.render(managedResult, this.element)
+                this.loading(false)
             })
             .catch(err => {
-                // manage errors
                 this.errorHandler(err)
-                this.handelLoading(false)
+                this.loading(false)
             })
     }
 
     /**
      * generate html by iterate the result
      *
-     * @param {object} dataResult object of result that it has items in it
-     * @param {node} sectionElement element that it has ul in it for results
+     * @param {object} result object of result that it has items in it
      * @memberof GeneralSearch
      */
-    generator(dataResult, sectionElement) {
-        const element = sectionElement.querySelector('ul')
-
-        if (!dataResult || !dataResult.items) {
-
-            // clear
-            this.clearElementNode(element)
-
-            // check searchInformation->totalResults
+    render(result) {
+        // TODO: check searchInformation->totalResults
+        if (!result || !result.items) {
+            this.clear(this.dataElement)
             const noResult = `<li class="no-result"></li>`
-
-            element.insertAdjacentHTML('beforeend', noResult)
+            this.dataElement.insertAdjacentHTML("beforeend", noResult)
             return
         }
 
-        // clear
-        this.clearElementNode(element)
+        this.clear(this.dataElement)
 
-        dataResult.items.forEach((data) => {
-            // create template
-            const itemTemplate = this.dataTemplate(data)
-
-            // insert html to the element
-            element.insertAdjacentHTML('beforeend', itemTemplate)
+        result.items.forEach((data) => {
+            const itemTemplate = this.renderTemplate(data)
+            this.dataElement.insertAdjacentHTML("beforeend", itemTemplate)
         })
     }
 
     /**
      * clear node with set the empty value to innerHTML
      *
-     * @param {node} element element to clear data in it
+     * @param {node} element
      * @memberof GeneralSearch
      */
-    clearElementNode(element) {
-        element.innerHTML = ''
+    clear(element) {
+        element.innerHTML = ""
     }
 
     /**
@@ -121,8 +119,8 @@ export default class GeneralSearch {
      * @returns string
      * @memberof GeneralSearch
      */
-    dataTemplate(data) {
-        return 'Empty Template'
+    renderTemplate(data) {
+        return "Empty Template"
     }
 
     /**
@@ -131,8 +129,8 @@ export default class GeneralSearch {
      * @param {boolean} active show or hide loading
      * @memberof GeneralSearch
      */
-    handelLoading(active) {
-        this.resultSectionElement.getElementsByClassName('loading')[0].style.display = active ? 'block' : 'none'
+    loading(active) {
+        this.loadingElement.style.display = active ? "block" : "none"
     }
 
     /**
@@ -146,7 +144,7 @@ export default class GeneralSearch {
         const targetAction = event.target
 
         // if it is a button
-        if (targetAction.nodeName === 'BUTTON') {
+        if (targetAction.nodeName === "BUTTON") {
             this.buttonAction(targetAction.attributes.route.value)
         }
     }
@@ -177,7 +175,9 @@ export default class GeneralSearch {
      * @memberof GeneralSearch
      */
     prevPage() {
-        this.service.prevPage()
+        if (this.service.startFrom !== 1) {
+            this.service.prevPage()
+        }
     }
 
     /**
@@ -187,21 +187,21 @@ export default class GeneralSearch {
      * @memberof GeneralSearch
      */
     errorHandler(error) {
-        console.log('ERROR: ', error)
+        console.log("ERROR: ", error)
 
         if (error.ok === false) {
             switch (error.status) {
                 case 429:
-                    alert('Cros Domain Error!')
+                    alert("Cros Domain Error!")
                     break
                 case 400:
-                    alert('Validation Error!')
+                    alert("Validation Error!")
                     break
                 case 500:
-                    alert('Server error, try again!')
+                    alert("Server error, try again!")
                     break
                 default:
-                    alert('Something went wrong!')
+                    alert("Something went wrong!")
                     break
             }
         }

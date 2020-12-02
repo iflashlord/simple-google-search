@@ -1,59 +1,53 @@
-import { waitFor } from '@testing-library/dom'
-import '@testing-library/jest-dom/extend-expect'
-import { JSDOM } from 'jsdom'
+import { waitFor } from "@testing-library/dom"
+import "@testing-library/jest-dom/extend-expect"
+import { JSDOM } from "jsdom"
 
-import GeneralSearch from './generalSearch'
+import GeneralSearch from "./generalSearch"
 
-var generalSearchClassSample
+var generalSearchTest
 var sampleElement
-describe('generalSearch.js', () => {
+describe("generalSearch.js", () => {
     beforeEach(() => {
-        // ready simple element base on the template
-        sampleElement = document.createElement('div')
+        sampleElement = document.createElement("div")
         document.body.appendChild(sampleElement)
-        sampleElement.appendChild(document.createElement('ul'))
+        sampleElement.appendChild(document.createElement("ul"))
 
-        // sample class
-        generalSearchClassSample = new GeneralSearch(null, sampleElement)
+        generalSearchTest = new GeneralSearch(null, sampleElement)
 
     })
 
-
-    it('check generator for no result page if dataResult is undefined or null', () => {
-        generalSearchClassSample.generator(null, sampleElement)
+    it("check render for no result page if dataResult is undefined or null", () => {
+        generalSearchTest.render(null)
 
         // check generated no result li exist and has no-result class
-        expect(sampleElement.querySelector('li').className).toEqual('no-result')
+        expect(sampleElement.querySelector("li").className).toEqual("no-result")
     })
 
-    it('check generator for sample result', () => {
+    it("check render for sample result", () => {
         // set fake template function
-        generalSearchClassSample.dataTemplate = (data) => (`<i>${data.name}</i>`)
+        generalSearchTest.renderTemplate = (data) => (`<i>${data.name}</i>`)
 
-        // sample json
         const sampleJSON = { items: [{ name: "Tom" }, { name: "Judy" }] }
 
-        // generate sample JSON
-        generalSearchClassSample.generator(sampleJSON, sampleElement)
+        generalSearchTest.render(sampleJSON)
 
         // check the first item exist and has the proper value
-        expect(sampleElement.querySelectorAll('i')[0].innerHTML).toEqual('Tom')
+        expect(sampleElement.querySelectorAll("i")[0].innerHTML).toEqual("Tom")
 
         // check the second item exist and has the proper value
-        expect(sampleElement.querySelectorAll('i')[1].innerHTML).toEqual('Judy')
+        expect(sampleElement.querySelectorAll("i")[1].innerHTML).toEqual("Judy")
     })
 
-    it('check clearElementNode to clear anything inside element', () => {
-        // set sample data to element
+    it("check clearElementNode to clear anything inside element", () => {
         sampleElement.innerHTML = "something to clear"
 
-        // it should have the sample data
+        // check if it has smaple data
         expect(sampleElement.innerHTML).toEqual("something to clear")
 
         // run clearElementNode to clear node
-        generalSearchClassSample.clearElementNode(sampleElement)
+        generalSearchTest.clear(sampleElement)
 
-        // it should be clear
+        // check if it is clear
         expect(sampleElement.innerHTML).toEqual("")
 
     })

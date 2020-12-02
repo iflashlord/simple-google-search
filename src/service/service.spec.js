@@ -1,11 +1,11 @@
-import Service from './service'
+import Service from "./service"
 
 var serviceClassSample
-describe('service.js', () => {
+describe("service.js", () => {
 
-    it('check generateURL set type web', () => {
-        serviceClassSample = new Service('web', 9, 1)
-        serviceClassSample.generateURL();
+    it("check generateUrl set type web", () => {
+        serviceClassSample = new Service("web", 9, 1)
+        serviceClassSample.generateUrl();
 
         // check URL type is web
         expect(serviceClassSample.requestUrl.indexOf("searchType=0")).not.toEqual(-1)
@@ -13,9 +13,9 @@ describe('service.js', () => {
         expect(serviceClassSample.requestUrl.indexOf("searchType=image")).toEqual(-1)
     })
 
-    it('check generateURL set type image', () => {
-        serviceClassSample = new Service('image', 9, 1)
-        serviceClassSample.generateURL();
+    it("check generateUrl set type image", () => {
+        serviceClassSample = new Service("image", 9, 1)
+        serviceClassSample.generateUrl();
 
         // check URL type is image in query string
         expect(serviceClassSample.requestUrl.indexOf("imgSize=medium")).not.toEqual(-1)
@@ -23,9 +23,9 @@ describe('service.js', () => {
     })
 
 
-    it('check generateURL set start and num', () => {
-        serviceClassSample = new Service('web', 10, 99)
-        serviceClassSample.generateURL();
+    it("check generateUrl set start and num", () => {
+        serviceClassSample = new Service("web", 10, 99)
+        serviceClassSample.generateUrl();
 
         // check both start and num in query string
         expect(serviceClassSample.requestUrl.indexOf("start=99")).not.toEqual(-1)
@@ -33,22 +33,22 @@ describe('service.js', () => {
 
     })
 
-    it('check updateQuery for change querySearch', () => {
-        serviceClassSample = new Service('web', 10, 99)
+    it("check update for change query", () => {
+        serviceClassSample = new Service("web", 10, 99)
 
         // check update the search query
-        serviceClassSample.updateQuery('updated string')
+        serviceClassSample.update("updated string")
 
-        expect(serviceClassSample.querySearch).toEqual('updated string')
+        expect(serviceClassSample.query).toEqual("updated string")
 
         // check update the search query
-        serviceClassSample.updateQuery('updated new string')
+        serviceClassSample.update("updated new string")
 
-        expect(serviceClassSample.querySearch).toEqual('updated new string')
+        expect(serviceClassSample.query).toEqual("updated new string")
 
     })
-    it('check nextPage for change startFrom', () => {
-        serviceClassSample = new Service('web', 5, 1)
+    it("check nextPage for change startFrom", () => {
+        serviceClassSample = new Service("web", 5, 1)
 
         // check the initial value
         expect(serviceClassSample.startFrom).toEqual(1)
@@ -68,8 +68,8 @@ describe('service.js', () => {
 
     })
 
-    it('check prevPage for change startFrom', () => {
-        serviceClassSample = new Service('web', 5, 16)
+    it("check prevPage for change startFrom", () => {
+        serviceClassSample = new Service("web", 5, 16)
 
         // check the initial value
         expect(serviceClassSample.startFrom).toEqual(16)
