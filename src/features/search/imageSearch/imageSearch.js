@@ -9,9 +9,9 @@ import GeneralSearch from "../generalSearch"
 export default class ImageSearch extends GeneralSearch {
 
     /**
-     * override template image search result
-     *
-     * @param {object} data object of result data in order to use in template
+     * template to format the render result
+     * 
+     * @param {object} data the object of result data to use in the template
      * @returns string
      * @memberof ImageSearch
      */
@@ -36,9 +36,6 @@ export default class ImageSearch extends GeneralSearch {
      * @memberof ImageSearch
      */
     buttonAction(data) {
-        // then use the route value to action
-        console.log("Action from Image Search", data)
-
         // TODO: open proper dialog to show image in larger size
         window.open(data)
     }

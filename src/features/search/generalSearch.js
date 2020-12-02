@@ -18,12 +18,13 @@ export default class GeneralSearch {
 
         this.cache = new Cache()
 
-        // add an event to result section to handel all items in it
+        // add an event to the rendering container to handle all items in it
         this.element.addEventListener("click", this.clickHandler.bind(this))
     }
 
     /**
-     * request and get result
+     * search by query text on google regarding the service
+     * it also checks if the query is null to render an empty page
      *
      * @param {string} query word to search on google
      * @memberof GeneralSearch
@@ -36,17 +37,18 @@ export default class GeneralSearch {
 
         this.service.update(query)
 
-        // last request url to check with new request
-        const lastRequestURL = this.service.requestUrl;
+        // last request URL to check with a new request
+        const lastRequestedURL = this.service.requestUrl;
 
-        // generate url before request it needs to reduce 
+        // generate URL before request (it needs to reduce the number of requests)
         this.service.generateUrl()
 
-        if (lastRequestURL === this.service.requestUrl) {
+        // prevent the re-render of the current request by URL 
+        if (lastRequestedURL === this.service.requestUrl) {
             return;
         }
 
-        // check any cached version exist 
+        // check if any cached result exist to use that instead of a new request
         const cachedResult = this.cache.retrieve(this.service.requestUrl)
         if (cachedResult) {
             this.render(cachedResult, this.element)
@@ -56,7 +58,7 @@ export default class GeneralSearch {
 
         this.loading(true)
 
-        // perform a request
+        // use service to HTTP request the search query
         this.service.request().then(response => {
                 if (response.ok) {
                     return response.json()
@@ -65,11 +67,10 @@ export default class GeneralSearch {
                 }
             }).then(response => {
 
-                // manage store data on temporary cache storage
-                const managedResult = this.cache.store(this.service.requestUrl, response)
+                // get response result through the store method to check cache first
+                const result = this.cache.store(this.service.requestUrl, response)
 
-                // run render create html element on DOM
-                this.render(managedResult, this.element)
+                this.render(result, this.element)
                 this.loading(false)
             })
             .catch(err => {
@@ -79,7 +80,8 @@ export default class GeneralSearch {
     }
 
     /**
-     * generate html by iterate the result
+     * render html by iterate the result
+     * we use renderTemplate method to get template for rendering process
      *
      * @param {object} result object of result that it has items in it
      * @memberof GeneralSearch
@@ -87,9 +89,7 @@ export default class GeneralSearch {
     render(result) {
         // TODO: check searchInformation->totalResults
         if (!result || !result.items) {
-            this.clear(this.dataElement)
-            const noResult = `<li class="no-result"></li>`
-            this.dataElement.insertAdjacentHTML("beforeend", noResult)
+            this.emptyPage(result)
             return
         }
 
@@ -101,8 +101,21 @@ export default class GeneralSearch {
         })
     }
 
+
     /**
-     * clear node with set the empty value to innerHTML
+     * empty page method to insert no result page
+     *
+     * @param {object} result
+     * @memberof GeneralSearch
+     */
+    emptyPage(result) {
+        this.clear(this.dataElement)
+        const noResult = `<li class="no-result"></li>`
+        this.dataElement.insertAdjacentHTML("beforeend", noResult)
+    }
+
+    /**
+     * clear element with set the empty value to innerHTML
      *
      * @param {node} element
      * @memberof GeneralSearch
@@ -112,10 +125,9 @@ export default class GeneralSearch {
     }
 
     /**
-     * template manager to change result type base place data
-     * data result object to use in template
+     * template to format the render result
      * 
-     * @param {object} data object of result data in order to use in template
+     * @param {object} data the object of result data to use in the template
      * @returns string
      * @memberof GeneralSearch
      */
@@ -124,7 +136,7 @@ export default class GeneralSearch {
     }
 
     /**
-     * handel show/hide loading element in section
+     * handel show/hide loading element
      *
      * @param {boolean} active show or hide loading
      * @memberof GeneralSearch
@@ -134,34 +146,31 @@ export default class GeneralSearch {
     }
 
     /**
-     * event on the parent of elements
+     * buttons event handler with check node only is a button
      *
      * @param {mouse} event mouse event
      * @memberof GeneralSearch
      */
     clickHandler(event) {
-        // get the item with action
         const targetAction = event.target
 
-        // if it is a button
         if (targetAction.nodeName === "BUTTON") {
             this.buttonAction(targetAction.attributes.route.value)
         }
     }
 
     /**
-     * data specific to an item to do action
+     * button click handler with its route attribute data
      *
-     * @param {string} data string data comes from the route attribute on buttons
+     * @param {string} data
      * @memberof GeneralSearch
      */
     buttonAction(data) {
-        // then use the route value to action
         console.log(data)
     }
 
     /**
-     * run service next page action
+     * next page call through the service class
      *
      * @memberof GeneralSearch
      */
@@ -170,7 +179,8 @@ export default class GeneralSearch {
     }
 
     /**
-     * run service previous page action
+     * previous page call through the service class
+     * check for limitation on first page
      *
      * @memberof GeneralSearch
      */

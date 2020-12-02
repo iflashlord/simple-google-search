@@ -10,15 +10,14 @@ import GeneralSearch from "../generalSearch"
 export default class WebSearch extends GeneralSearch {
 
     /**
-     * override template web search result
-     *
-     * @param {object} data object of result data in order to use in template
+     * template to format the render result
+     * 
+     * @param {object} data the object of result data to use in the template
      * @returns string
      * @memberof WebSearch
      */
     renderTemplate(data) {
         const title = data.title
-        const displayLink = data.displayLink
         const link = data.link
         const snippet = data.snippet
 
@@ -39,9 +38,6 @@ export default class WebSearch extends GeneralSearch {
      * @memberof WebSearch
      */
     buttonAction(data) {
-        // then use the route value to action
-        console.log("Action from Web Search", data)
-
         // TODO: open proper dialog to show result
         window.open(data)
     }

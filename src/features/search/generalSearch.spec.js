@@ -13,41 +13,35 @@ describe("generalSearch.js", () => {
         sampleElement.appendChild(document.createElement("ul"))
 
         generalSearchTest = new GeneralSearch(null, sampleElement)
-
     })
 
-    it("check render for no result page if dataResult is undefined or null", () => {
+    it("check render method for undefined or null", () => {
         generalSearchTest.render(null)
 
-        // check generated no result li exist and has no-result class
+        // check rendered no result li element exists and has no-result class
         expect(sampleElement.querySelector("li").className).toEqual("no-result")
     })
 
-    it("check render for sample result", () => {
-        // set fake template function
+    it("check render method works well", () => {
+        // set mock template function
         generalSearchTest.renderTemplate = (data) => (`<i>${data.name}</i>`)
 
         const sampleJSON = { items: [{ name: "Tom" }, { name: "Judy" }] }
 
         generalSearchTest.render(sampleJSON)
 
-        // check the first item exist and has the proper value
+        // check the first and second items has the value of sampleJSON
         expect(sampleElement.querySelectorAll("i")[0].innerHTML).toEqual("Tom")
-
-        // check the second item exist and has the proper value
         expect(sampleElement.querySelectorAll("i")[1].innerHTML).toEqual("Judy")
     })
 
-    it("check clearElementNode to clear anything inside element", () => {
+    it("check clear method", () => {
         sampleElement.innerHTML = "something to clear"
 
-        // check if it has smaple data
         expect(sampleElement.innerHTML).toEqual("something to clear")
 
-        // run clearElementNode to clear node
         generalSearchTest.clear(sampleElement)
 
-        // check if it is clear
         expect(sampleElement.innerHTML).toEqual("")
 
     })
