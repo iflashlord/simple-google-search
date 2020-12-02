@@ -1,40 +1,45 @@
 import Cache from './cache'
 
-var cacheClassSample
+var cacheTest
 describe('cache.js', () => {
     beforeEach(() => {
-        cacheClassSample = new Cache()
+        cacheTest = new Cache()
     })
 
     it('check cache is null at first', () => {
-        // check cache object is clear
-        expect(Object.entries(cacheClassSample.cacheStorage).length).toEqual(0)
+        // check storage object to be clear at first
+        expect(Object.entries(cacheTest.storage).length).toEqual(0)
     })
 
-    it('check manage cache works well', () => {
-        // check manage with sample object
-        cacheClassSample.manageCache('sample', { data: true })
+    it('check cache works well', () => {
+        // check store data 
+        cacheTest.store('sample', { data: true })
 
-        // check the length 
-        expect(Object.entries(cacheClassSample.cacheStorage).length).toEqual(1)
+        // check the length of storage if it has a value after store data in it
+        expect(Object.entries(cacheTest.storage).length).toEqual(1)
 
-        // check data based on the key
-        expect(cacheClassSample.cacheStorage['sample'].data).toEqual(true)
+        // check data stored by sample key if it has correct value
+        expect(cacheTest.storage['sample'].data).toEqual(true)
 
-        // check checkCache method to check it is exist
-        expect(cacheClassSample.checkCache('sample')).not.toEqual(false)
+        // check retrieve method to retrieve the stored value by key
+        expect(cacheTest.retrieve('sample')).not.toEqual(false)
+
+        // check retrieve method with unknown key to return null
+        expect(cacheTest.retrieve('unknown')).toEqual(null)
 
     })
 
     it('check clear cache', () => {
-        cacheClassSample.manageCache('sample', { data: true })
-        expect(Object.entries(cacheClassSample.cacheStorage).length).toEqual(1)
+        cacheTest.store('sample', { data: true })
 
-        // check clear works properly
-        cacheClassSample.clear()
+        // check if the storage has some data
+        expect(Object.entries(cacheTest.storage).length).toEqual(1)
 
-        expect(Object.entries(cacheClassSample.cacheStorage).length).toEqual(0)
-        expect(cacheClassSample.checkCache('sample')).toEqual(false)
+        // clear method
+        cacheTest.clear()
+
+        // check if the storage cleared
+        expect(Object.entries(cacheTest.storage).length).toEqual(0)
 
     })
 

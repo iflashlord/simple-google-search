@@ -43,11 +43,11 @@ const imageSearchFeature = new ImageSearch(imageService, imageResultSection)
 /** 
  * start with filled sample search
  */
-if (!searchBox.value) {
-    searchBox.value = "Angelina jolie"
-    imageSearchFeature.performSearch(searchBox.value)
-    webSearchFeature.performSearch(searchBox.value)
-}
+// if (!searchBox.value) {
+//     searchBox.value = "Angelina jolie"
+//     imageSearchFeature.performSearch(searchBox.value)
+//     webSearchFeature.performSearch(searchBox.value)
+// }
 
 /** 
  * define submit event for header form

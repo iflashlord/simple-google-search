@@ -7,48 +7,43 @@
 export default class Cache {
 
     constructor() {
-        this.cacheStorage = {}
+        this.storage = {}
     }
 
     /**
-     * check the request url if it is available on cache storage or store it and return json
+     * check the request URL if it is available on cache storage or store it and return JSON
      *
-     * @param {string} requestUrl url of api request with all querystring parameters
-     * @param {object} resultJSON result object to store as value
+     * @param {string} request URL of an API request with all query string parameters
+     * @param {object} result result object to save
      * @returns object
      * @memberof Cache
      */
-    manageCache(requestUrl, resultJSON) {
-        if (this.cacheStorage[requestUrl] != undefined && this.cacheStorage[requestUrl] != '') {
-            return this.cacheStorage[requestUrl]
-        } else {
-            this.cacheStorage[requestUrl] = resultJSON
+    store(request, result) {
+        if (!this.storage[request]) {
+            this.storage[request] = result
         }
 
-        return this.cacheStorage[requestUrl]
+        return this.storage[request]
     }
 
     /**
-     * check cache and return stored data
+     * retrieve data if available
      *
      * @param {string} requestUrl url of api request with all querystring parameters
-     * @returns json
+     * @returns json or null if it is not exist
      * @memberof Cache
      */
-    checkCache(requestUrl) {
-        if (this.cacheStorage[requestUrl] != undefined && this.cacheStorage[requestUrl] != '') {
-            return this.cacheStorage[requestUrl]
-        }
-        return false
+    retrieve(requestUrl) {
+        return this.storage[requestUrl] || null
     }
 
     /**
-     * clear all cached request result
+     * clear the storage
      *
      * @memberof Cache
      */
     clear() {
-        this.cacheStorage = {}
+        this.storage = {}
     }
 
 }

@@ -38,7 +38,7 @@ export default class GeneralSearch {
         this.service.generateURL()
 
         // check any cached version exist 
-        const cachedResult = this.cache.checkCache(this.service.requestUrl)
+        const cachedResult = this.cache.retrieve(this.service.requestUrl)
         if (cachedResult) {
             this.generator(cachedResult, this.resultSectionElement)
             this.handelLoading(false)
@@ -56,7 +56,7 @@ export default class GeneralSearch {
             }).then(response => {
 
                 // manage store data on temporary cache storage
-                const managedResult = this.cache.manageCache(this.service.requestUrl, response)
+                const managedResult = this.cache.store(this.service.requestUrl, response)
 
                 // run generator to generate items
                 this.generator(managedResult, this.resultSectionElement)
