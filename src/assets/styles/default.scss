@@ -10,3 +10,65 @@ $border-focused-color: #fff;
 $item-focused-border :#3c3963;
 $button-focused-color:#6460a7;
 $button-focused-bg:#dcdaff;
+
+/* Responsive Breakpoint */
+
+$tv-medium: 1920px;
+$small-desktop: 960px;
+$large-desktop: 1200px;
+$handheld: 768px;
+$handhelds-landscape: 1024px;
+$mobile: 640px;
+$mobile-landscape: 480px;
+@mixin breakpoint($media) {
+    @if $media==tvMedium {
+        @media only screen and (min-width: $tv-medium) {
+            @content
+        }
+    }
+    @if $media==largeDesktop {
+        @media only screen and (min-width: $large-desktop) {
+            @content
+        }
+    }
+    @if $media==smallDesktop {
+        @media only screen and (max-width: $small-desktop) {
+            @content;
+        }
+    }
+    @if $media==handhelds {
+        @media only screen and (max-width: $handheld) {
+            @content;
+        }
+    }
+    @if $media==handhelds-landscape {
+        @media only screen and (min-device-width: $handheld) and (max-device-width: $handhelds-landscape) and (orientation: landscape) {
+            @content;
+        }
+    }
+    @if $media==mobile {
+        @media only screen and (max-width: $mobile) {
+            @content;
+        }
+    }
+    @if $media==mobile-portrait {
+        @media only screen and (max-width: $mobile) and (orientation: portrait) {
+            @content;
+        }
+    }
+    @if $media==mobile-landscape {
+        @media only screen and (min-width: 320px) and (max-width: $mobile-landscape) and (orientation: landscape) {
+            @content;
+        }
+    }
+    @if $media==retina {
+        @media (-webkit-min-device-pixel-ratio: 2) {
+            @content;
+        }
+    }
+    @if $media==iphone5 {
+        @media only screen and (device-aspect-ratio: 40/71) {
+            @content
+        }
+    }
+}

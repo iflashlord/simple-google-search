@@ -31,6 +31,10 @@ header {
                 transition: background 400ms ease-in-out;
                 outline: none;
             }
+            @include breakpoint(mobile) {
+                flex: 2 0 100%;
+                margin-bottom: 1em;
+            }
         }
         button {
             flex: 1 0;
@@ -54,6 +58,9 @@ header {
             &#next-button,
             &#previous-button {
                 padding: 0.35em 0em;
+            }
+            @include breakpoint(mobile) {
+                margin-left: 0;
             }
         }
     }

@@ -23,12 +23,20 @@ body {
     background: $bg-basic-color;
     background: linear-gradient(90deg, $bg-start-gradient-color 0%, $bg-end-gradient-color 100%);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    @include breakpoint(handhelds) {
+        padding: 1em;
+    }
 }
 
 main {
     display: flex;
     justify-content: space-between;
     height: 100%;
+    @include breakpoint(handhelds) {
+        flex-direction: column;
+        justify-content: stretch;
+        flex-flow: wrap;
+    }
 }
 
 header,

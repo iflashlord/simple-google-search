@@ -13,6 +13,11 @@ aside {
     padding: 0 1em;
     overflow: auto;
     position: relative;
+    @include breakpoint(handhelds) {
+        width: 100%;
+        height: inherit;
+        margin-bottom: 1em;
+    }
     h2 {
         margin: 0.3em 0 0.3em;
         color: $text-color;
